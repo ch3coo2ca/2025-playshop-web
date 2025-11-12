@@ -1,0 +1,204 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* 배경 이미지 어두운 오버레이 */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+/* 블러 오버레이 */
+.app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding: 40px 20px;
+}
+
+/* 헤더 글래스모피즘 배경 */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+.christmas-ornament {
+  display: inline-block;
+  font-size: 40px;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.christmas-ornament.left {
+  animation-delay: 0s;
+}
+
+.christmas-ornament.right {
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(-5deg);
+  }
+  50% { 
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+.title {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title-main {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.title-sub {
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #ffd700 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+  letter-spacing: 1px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.footer {
+  margin-top: 100px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content p {
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-year {
+  opacity: 0.8;
+  font-size: 14px !important;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 968px) {
+  .container {
+    padding: 40px 16px;
+  }
+
+  .header {
+    padding: 30px 16px;
+  }
+
+  .header::before {
+    width: 100%;
+  }
+
+  .christmas-ornament {
+    font-size: 35px;
+  }
+
+  .title-main {
+    font-size: 16px;
+  }
+
+  .title-sub {
+    font-size: 26px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 25px 16px;
+  }
+
+  .christmas-ornament {
+    font-size: 30px;
+  }
+
+  .title-main {
+    font-size: 15px;
+  }
+
+  .title-sub {
+    font-size: 22px;
+  }
+
+  .footer-content p {
+    font-size: 16px;
+  }
+}
