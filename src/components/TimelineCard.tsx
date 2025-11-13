@@ -7,14 +7,16 @@ interface TimelineCardProps {
 }
 
 export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
+  const hasDetails = Boolean(activity.location || activity.mapUrl);
+  
   return (
     <div className="timeline-item">
       <div 
-        className="timeline-card" 
-        onClick={onClick}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && onClick()}
+        className={`timeline-card ${hasDetails ? 'clickable' : ''}`}
+        onClick={hasDetails ? onClick : undefined}
+        role={hasDetails ? "button" : undefined}
+        tabIndex={hasDetails ? 0 : undefined}
+        onKeyDown={hasDetails ? (e) => e.key === 'Enter' && onClick() : undefined}
       >
         <div className="card-time">{activity.time}</div>
         
@@ -25,7 +27,7 @@ export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
           )}
           <p className="card-description">{activity.description}</p>
           
-          {(activity.location || activity.mapUrl) && (
+          {hasDetails && (
             <div className="card-footer">
               <span className="view-details">자세히 보기 →</span>
             </div>
