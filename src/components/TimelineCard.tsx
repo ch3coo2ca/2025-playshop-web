@@ -18,21 +18,23 @@ export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
         tabIndex={hasDetails ? 0 : undefined}
         onKeyDown={hasDetails ? (e) => e.key === 'Enter' && onClick() : undefined}
       >
-        <div className="card-time">{activity.time}</div>
-        
-        <div className="card-content">
-          <h3 className="card-title">{activity.title}</h3>
-          {activity.subtitle && (
-            <p className="card-subtitle">{activity.subtitle}</p>
-          )}
-          <p className="card-description">{activity.description}</p>
+        <div className="card-inner">
+          <div className="card-time">{activity.time}</div>
           
-          {hasDetails && (
-            <div className="card-footer">
-              <span className="view-details">자세히 보기 →</span>
-            </div>
-          )}
+          <div className="card-content">
+            <h3 className="card-title">{activity.title}</h3>
+            {activity.subtitle && (
+              <p className="card-subtitle">{activity.subtitle}</p>
+            )}
+            <p className="card-description">{activity.description}</p>
+          </div>
         </div>
+        
+        {hasDetails && (
+          <div className="card-footer">
+            <span className="view-details">자세히 보기 →</span>
+          </div>
+        )}
       </div>
     </div>
   );
