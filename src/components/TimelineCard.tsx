@@ -1,9 +1,9 @@
-import type { Activity } from '../types';
+import type { Activity, TeamActivity } from '../types';
 import '../styles/TimelineCard.css';
 
 interface TimelineCardProps {
   activity: Activity;
-  onClick: () => void;
+  onClick: (team?: TeamActivity) => void;
 }
 
 export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
@@ -18,10 +18,10 @@ export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
             <div 
               key={index}
               className={`timeline-card team-card ${hasDetails ? 'clickable' : ''}`}
-              onClick={hasDetails ? onClick : undefined}
+              onClick={hasDetails ? () => onClick(team) : undefined}
               role={hasDetails ? "button" : undefined}
               tabIndex={hasDetails ? 0 : undefined}
-              onKeyDown={hasDetails ? (e) => e.key === 'Enter' && onClick() : undefined}
+              onKeyDown={hasDetails ? (e) => e.key === 'Enter' && onClick(team) : undefined}
             >
               <div className="team-card-header">
                 <div className="card-time">{activity.time}</div>
@@ -48,7 +48,7 @@ export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
     <div className="timeline-item">
       <div 
         className={`timeline-card ${hasDetails ? 'clickable' : ''}`}
-        onClick={hasDetails ? onClick : undefined}
+        onClick={hasDetails ? () => onClick() : undefined}
         role={hasDetails ? "button" : undefined}
         tabIndex={hasDetails ? 0 : undefined}
         onKeyDown={hasDetails ? (e) => e.key === 'Enter' && onClick() : undefined}

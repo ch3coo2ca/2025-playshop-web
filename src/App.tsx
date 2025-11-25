@@ -3,12 +3,13 @@ import { Snowflakes } from './components/Snowflakes';
 import { TimelineCard } from './components/TimelineCard';
 import { Modal } from './components/Modal';
 import { activities } from './data/schedule';
-import type { Activity } from './types';
+import type { Activity, TeamActivity } from './types';
 import xmasBg from './assets/xmas.jpg';
 import './App.css';
 
 function App() {
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
+  const [selectedTeam, setSelectedTeam] = useState<TeamActivity | null>(null);
 
   return (
     <div className="app" style={{ backgroundImage: `url(${xmasBg})` }}>
@@ -28,7 +29,10 @@ function App() {
             <TimelineCard
               key={activity.id}
               activity={activity}
-              onClick={() => setSelectedActivity(activity)}
+              onClick={(team) => {
+                setSelectedActivity(activity);
+                setSelectedTeam(team || null);
+              }}
             />
           ))}
         </div>
@@ -44,7 +48,11 @@ function App() {
       {selectedActivity && (
         <Modal
           activity={selectedActivity}
-          onClose={() => setSelectedActivity(null)}
+          selectedTeam={selectedTeam}
+          onClose={() => {
+            setSelectedActivity(null);
+            setSelectedTeam(null);
+          }}
         />
       )}
     </div>

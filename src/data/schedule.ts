@@ -3,9 +3,9 @@ import type { Activity } from '../types';
 export const activities: Activity[] = [
   {
     id: '1',
-    time: '11:30',
-    title: '활동',
-    description: '플레이샵이 곧 시작됩니다! 준비해주세요.',
+    time: '11:50',
+    title: '집합',
+    description: '롯데호텔월드 2층에서 만나요.',
     icon: '🎄',
   },
   {
@@ -14,48 +14,70 @@ export const activities: Activity[] = [
     title: '점심 (라세느)',
     // subtitle: '1층 호텔식 뷔페, 2층 한식당',
     description: '맛있는 점심을 즐기며 팀원들과 이야기를 나눠봐요.',
-    location: '라세느',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.4536872749034!2d127.0276378!3d37.4979517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDI5JzUyLjYiTiAxMjfCsDAxJzM5LjUiRQ!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr',
+    location: '라세느 잠실점',
+    mapUrl: '<div id="daumRoughmapContainer1764057887312" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
     icon: '🍽️',
   },
   {
     id: '3',
-    time: '14:00~14:30',
-    title: '팀별 택시 이동',
-    subtitle: '(라세느 → 잠실종합운동장)',
-    description: '택시를 타고 편안하게 이동해주세요. 택시는 각자 법인 카드로 결제 후 정산합니다.',
-    icon: '🚕',
-  },
-  {
-    id: '4',
-    time: '14:30~17:30',
+    time: '14:00~17:30',
     title: '팀별 액티비티 진행',
+    subtitle: '택시를 타고 잠실종합운동장으로 이동해주세요 (법인카드 결제 후 정산)',
     description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
     location: '잠실종합운동장',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8234!2d127.0717!3d37.5145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca5a1f2f!2s0x357ca5a1f2f!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr',
+    mapUrl: '<div id="daumRoughmapContainer1764059872566" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
     icon: '🎭',
     teamActivities: [
       {
         label: 'A팀',
         activity: '쿠자 공연 관람 (130분)',
-        description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.'
+        description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
+        subtitle: '택시를 타고 잠실종합운동장으로 이동해주세요 (법인카드 결제 후 정산)',
+        detailedInfo: '잠실종합운동장에서 환상적인 쿠자 공연을 관람합니다.\n\n공연 시간: 130분\n장소: 잠실종합운동장'
       },
       {
         label: 'B팀',
         activity: '마사지+도자기 트리 클래스',
-        description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.'
+        description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
+        subtitle: '택시를 타고 마사지 장소로 이동해주세요',
+        maps: [
+          {
+            title: '스파에이르 잠실롯데월드몰점',
+            address: '서울 송파구 올림픽로 300 롯데월드몰 6층',
+            time: '14:30 - 15:10 (40분)',
+            mapUrl: '<div id="daumRoughmapContainer1764060654477" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
+            timestamp: '1764060654477',
+            key: 'd6vvzm2i62v'
+          },
+          {
+            title: '더풋샵마사지 잠실역점',
+            address: '서울 송파구 올림픽로 지하 265 잠실역 지하 1층',
+            time: '14:30 - 15:30 (60분)',
+            mapUrl: '<div id="daumRoughmapContainer1764060799169" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
+            timestamp: '1764060799169',
+            key: 'csccwzjycom'
+          },
+          {
+            title: 'ZNZN Ceramic Studio',
+            address: '서울 송파구 백제고분로41길 42-22 2층',
+            time: '16:00 - 17:30 (90분)',
+            mapUrl: '<div id="daumRoughmapContainer1764060856780" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
+            timestamp: '1764060856780',
+            key: 'cse5fmvsdbm'
+          }
+        ]
       }
     ]
   },
   {
-    id: '5',
+    id: '4',
     time: '17:30~18:00',
     title: '파티룸 이동 (택시 or 도보 선택)',
     description: '저녁 장소로 이동합니다.',
     icon: '🚶',
   },
   {
-    id: '6',
+    id: '5',
     time: '18:00~22:00',
     title: '저녁 및 플레이샵 행사',
     subtitle: '맛있는 랍스터와 대방어 냠냠',
