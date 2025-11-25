@@ -36,13 +36,6 @@ function App() {
             />
           ))}
         </div>
-
-        <footer className="footer">
-          <div className="footer-content">
-            <p>🎁 Merry Christmas & Happy Playshop! 🎁</p>
-            <p className="footer-year">© 2024</p>
-          </div>
-        </footer>
       </div>
 
       {selectedActivity && (

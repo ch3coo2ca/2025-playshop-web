@@ -331,6 +331,21 @@
   padding-left: 4px;
 }
 
+.modal-location-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-info {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.5;
+  padding-left: 4px;
+}
+
 .map-note {
   font-size: 13px;
   color: rgba(255, 215, 0, 0.95);

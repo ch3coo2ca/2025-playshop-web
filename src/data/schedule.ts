@@ -33,7 +33,7 @@ export const activities: Activity[] = [
         activity: '쿠자 공연 관람 (130분)',
         description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
         subtitle: '택시를 타고 잠실종합운동장으로 이동해주세요 (법인카드 결제 후 정산)',
-        detailedInfo: '잠실종합운동장에서 환상적인 쿠자 공연을 관람합니다.\n\n공연 시간: 130분\n장소: 잠실종합운동장'
+        detailedInfo: '잠실종합운동장에서 환상적인 쿠자 공연을 관람합니다.'
       },
       {
         label: 'B팀',
@@ -74,6 +74,8 @@ export const activities: Activity[] = [
     time: '17:30~18:00',
     title: '파티룸 이동 (택시 or 도보 선택)',
     description: '저녁 장소로 이동합니다.',
+    location: '서울 송파구 백제고분로7길 33 4층',
+    mapUrl: '<div id="daumRoughmapContainer1764062793311" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
     icon: '🚶',
   },
   {

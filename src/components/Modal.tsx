@@ -120,6 +120,40 @@ export const Modal = ({ activity, selectedTeam, onClose }: ModalProps) => {
     }
   }, [selectedTeam?.maps]);
 
+  // 단일 일반 지도 렌더링 (파티룸 등)
+  useEffect(() => {
+    if (!selectedTeam?.maps && activity.mapUrl && activity.mapUrl.includes('daumRoughmapContainer1764062793311')) {
+      const container = mapContainerRef.current;
+      if (!container) return;
+
+      container.innerHTML = activity.mapUrl;
+
+      let retryCount = 0;
+      const maxRetries = 20;
+
+      const renderMap = () => {
+        retryCount++;
+        
+        if (window.daum && window.daum.roughmap && window.daum.roughmap.Lander) {
+          try {
+            new window.daum.roughmap.Lander({
+              timestamp: '1764062793311',
+              key: 'csdrp5vg6om',
+              mapWidth: '640',
+              mapHeight: '360'
+            }).render();
+          } catch (error) {
+            console.error('카카오맵 렌더링 에러:', error);
+          }
+        } else if (retryCount < maxRetries) {
+          setTimeout(renderMap, 100);
+        }
+      };
+
+      setTimeout(renderMap, 100);
+    }
+  }, [activity.mapUrl, selectedTeam?.maps]);
+
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -189,21 +223,28 @@ export const Modal = ({ activity, selectedTeam, onClose }: ModalProps) => {
 
           {/* 단일 지도 렌더링 (기존 activity.mapUrl) */}
           {!hasMultipleMaps && activity.mapUrl && (
-            <div className="modal-map">
-              {isKakaoMap ? (
-                <div ref={mapContainerRef} className="kakao-map-container"></div>
-              ) : (
-                <iframe
-                  src={activity.mapUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title={`${activity.title} 지도`}
-                />
+            <div className="modal-location-section">
+              {activity.location && (
+                <div className="location-info">
+                  📍 {activity.location}
+                </div>
               )}
+              <div className="modal-map">
+                {isKakaoMap ? (
+                  <div ref={mapContainerRef} className="kakao-map-container"></div>
+                ) : (
+                  <iframe
+                    src={activity.mapUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${activity.title} 지도`}
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
