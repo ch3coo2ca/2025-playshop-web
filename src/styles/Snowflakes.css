@@ -16,10 +16,20 @@
   user-select: none;
   animation: fall linear infinite;
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
+  /* GPU 가속으로 성능 향상 */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes fall {
   to {
-    transform: translateY(100vh) rotate(360deg);
+    transform: translateY(100vh) rotate(360deg) translateZ(0);
+  }
+}
+
+/* 모바일에서 눈송이 개수 줄이기 */
+@media (max-width: 768px) {
+  .snowflake:nth-child(n+31) {
+    display: none;
   }
 }
