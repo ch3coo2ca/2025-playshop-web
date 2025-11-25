@@ -72,7 +72,7 @@ export const activities: Activity[] = [
   {
     id: '4',
     time: '17:30~18:00',
-    title: '파티룸 이동 (택시 or 도보 선택)',
+    title: '파티룸 이동 (하쿠나마타타)',
     description: '저녁 장소로 이동합니다.',
     location: '서울 송파구 백제고분로7길 33 4층',
     mapUrl: '<div id="daumRoughmapContainer1764062793311" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
@@ -82,7 +82,6 @@ export const activities: Activity[] = [
     id: '5',
     time: '18:00~22:00',
     title: '저녁 및 플레이샵 행사',
-    subtitle: '맛있는 랍스터와 대방어 냠냠',
     description: '맛있는 저녁과 함께 즐거운 시간을 보내세요! 푸짐한 선물이 기다리고 있답니다.',
     icon: '🍕',
   },
