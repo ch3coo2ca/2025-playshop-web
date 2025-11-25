@@ -1,3 +1,9 @@
+export interface TeamActivity {
+  label: string;
+  activity: string;
+  description: string;
+}
+
 export interface Activity {
   id: string;
   time: string;
@@ -7,5 +13,6 @@ export interface Activity {
   location?: string;
   mapUrl?: string;
   icon: string;
+  teamActivities?: TeamActivity[];
 }
 

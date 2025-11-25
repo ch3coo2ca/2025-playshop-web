@@ -30,11 +30,22 @@ export const activities: Activity[] = [
     id: '4',
     time: '14:30~17:30',
     title: '팀별 액티비티 진행',
-    subtitle: 'A팀: 쿠자 공연 관람 (130분) \n B팀: 마사지+도자기 트리 클래스',
     description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
     location: '잠실종합운동장',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8234!2d127.0717!3d37.5145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca5a1f2f!2s0x357ca5a1f2f!5e0!3m2!1sko!2skr!4v1234567890123!5m2!1sko!2skr',
     icon: '🎭',
+    teamActivities: [
+      {
+        label: 'A팀',
+        activity: '쿠자 공연 관람 (130분)',
+        description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.'
+      },
+      {
+        label: 'B팀',
+        activity: '마사지+도자기 트리 클래스',
+        description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.'
+      }
+    ]
   },
   {
     id: '5',
