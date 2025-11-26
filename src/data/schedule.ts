@@ -5,7 +5,7 @@ export const activities: Activity[] = [
     id: '1',
     time: '11:50',
     title: '집합',
-    description: '롯데호텔월드 2층에서 만나요.',
+    description: '롯데호텔월드 1층에서 만나요.',
     icon: '🎄',
   },
   {

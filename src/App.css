@@ -7,6 +7,13 @@
   background-position: center;
   background-attachment: scroll; /* fixed는 모바일에서 성능 이슈 */
   background-repeat: no-repeat;
+  /* iOS 전체 화면 덮기 */
+  padding-top: var(--sat);
+  padding-left: var(--sal);
+  padding-right: var(--sar);
+  padding-bottom: var(--sab);
+  margin: calc(-1 * var(--sat)) calc(-1 * var(--sar)) calc(-1 * var(--sab)) calc(-1 * var(--sal));
+  box-sizing: content-box;
 }
 
 /* iOS 오버스크롤 시 배경색 설정 */
@@ -23,15 +30,20 @@ body {
 .app::before {
   content: '';
   position: fixed;
-  /* 노치 영역까지 확장 */
-  top: calc(-1 * env(safe-area-inset-top, 0px));
-  left: calc(-1 * env(safe-area-inset-left, 0px));
-  right: calc(-1 * env(safe-area-inset-right, 0px));
-  bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
+  /* iOS safe-area를 완전히 덮기 위한 설정 */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   /* 주소창 숨김 대응 - 화면보다 크게 */
+  width: 100vw;
   height: 120vh;
   height: 120dvh; /* 동적 viewport 지원 브라우저용 */
-  width: 100vw;
+  /* margin으로 safe-area 바깥으로 확장 */
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+  margin-left: calc(-1 * env(safe-area-inset-left, 0px));
+  margin-right: calc(-1 * env(safe-area-inset-right, 0px));
+  margin-bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
   background: rgba(0, 0, 0, 0.3);
   z-index: 0;
   transform: translateZ(0);
@@ -41,15 +53,20 @@ body {
 .app::after {
   content: '';
   position: fixed;
-  /* 노치 영역까지 확장 */
-  top: calc(-1 * env(safe-area-inset-top, 0px));
-  left: calc(-1 * env(safe-area-inset-left, 0px));
-  right: calc(-1 * env(safe-area-inset-right, 0px));
-  bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
+  /* iOS safe-area를 완전히 덮기 위한 설정 */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   /* 주소창 숨김 대응 - 화면보다 크게 */
+  width: 100vw;
   height: 120vh;
   height: 120dvh; /* 동적 viewport 지원 브라우저용 */
-  width: 100vw;
+  /* margin으로 safe-area 바깥으로 확장 */
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+  margin-left: calc(-1 * env(safe-area-inset-left, 0px));
+  margin-right: calc(-1 * env(safe-area-inset-right, 0px));
+  margin-bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* iOS 지원 */
   background: rgba(0, 0, 0, 0.3);
