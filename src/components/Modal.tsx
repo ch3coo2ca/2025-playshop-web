@@ -30,12 +30,7 @@ export const Modal = ({ activity, selectedTeam, onClose }: ModalProps) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const multiMapContainersRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, []);
+  // CSS로 스크롤 제어하므로 useEffect 불필요
 
   // 단일 지도 렌더링 (기존 activity.mapUrl 사용)
   useEffect(() => {

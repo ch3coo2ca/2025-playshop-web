@@ -11,6 +11,10 @@
   padding: 20px;
   backdrop-filter: blur(12px);
   animation: fadeIn 0.3s ease-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 @keyframes fadeIn {
