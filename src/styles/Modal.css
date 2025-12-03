@@ -329,21 +329,21 @@
 .map-address-section {
   font-size: 13px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   line-height: 1.5;
   padding-left: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
 
 .map-members-section {
   font-size: 13px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 400;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   line-height: 1.5;
   padding-left: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
 
 .map-note {
