@@ -3,7 +3,7 @@
   min-height: 100dvh; /* 동적 viewport */
   position: relative;
   overflow-x: hidden;
-  background-size: cover;
+  /* background-size: cover; */
   background-position: center;
   background-attachment: scroll; /* fixed는 모바일에서 성능 이슈 */
   background-repeat: no-repeat;
@@ -24,55 +24,6 @@ html {
 
 body {
   background-color: #1a1a2e;
-}
-
-/* 배경 이미지 어두운 오버레이 */
-.app::before {
-  content: '';
-  position: fixed;
-  /* iOS safe-area를 완전히 덮기 위한 설정 */
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  /* 주소창 숨김 대응 - 화면보다 크게 */
-  width: 100vw;
-  height: 120vh;
-  height: 120dvh; /* 동적 viewport 지원 브라우저용 */
-  /* margin으로 safe-area 바깥으로 확장 */
-  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
-  margin-left: calc(-1 * env(safe-area-inset-left, 0px));
-  margin-right: calc(-1 * env(safe-area-inset-right, 0px));
-  margin-bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 0;
-  transform: translateZ(0);
-}
-
-/* 블러 오버레이 - 모바일 최적화 */
-.app::after {
-  content: '';
-  position: fixed;
-  /* iOS safe-area를 완전히 덮기 위한 설정 */
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  /* 주소창 숨김 대응 - 화면보다 크게 */
-  width: 100vw;
-  height: 120vh;
-  height: 120dvh; /* 동적 viewport 지원 브라우저용 */
-  /* margin으로 safe-area 바깥으로 확장 */
-  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
-  margin-left: calc(-1 * env(safe-area-inset-left, 0px));
-  margin-right: calc(-1 * env(safe-area-inset-right, 0px));
-  margin-bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* iOS 지원 */
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  will-change: transform; /* GPU 가속 */
-  transform: translateZ(0); /* GPU 레이어 생성 */
 }
 
 .container {

@@ -4,7 +4,7 @@ import { TimelineCard } from './components/TimelineCard';
 import { Modal } from './components/Modal';
 import { activities } from './data/schedule';
 import type { Activity, TeamActivity } from './types';
-import xmasBg from './assets/xmas.jpg';
+import xmasBg from './assets/xmas2.png';
 import './App.css';
 
 function App() {
