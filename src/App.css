@@ -46,6 +46,15 @@ body {
   padding: 40px 20px;
 }
 
+.header-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 .christmas-ornament {
   display: inline-block;
   font-size: 40px;
@@ -147,6 +156,10 @@ body {
     padding: 30px 16px;
   }
 
+  .header-image {
+    max-width: 100%;
+  }
+
   .christmas-ornament {
     font-size: 35px;
   }
@@ -164,6 +177,10 @@ body {
 @media (max-width: 640px) {
   .header {
     padding: 25px 16px;
+  }
+
+  .header-image {
+    max-width: 100%;
   }
 
   .christmas-ornament {

@@ -5,6 +5,7 @@ import { Modal } from './components/Modal';
 import { activities } from './data/schedule';
 import type { Activity, TeamActivity } from './types';
 import xmasBg from './assets/xmas2.png';
+import headerImg from './assets/header.png';
 import './App.css';
 
 function App() {
@@ -17,11 +18,7 @@ function App() {
       
       <div className="container">
         <header className="header">
-          <h1 className="title">
-            <span className="title-main">2025 하반기</span>
-            <span className="title-sub">숏폼 스튜디오 스쿼드 플레이샵</span>
-          </h1>
-          <div className="christmas-ornament right">🎄</div>
+          <img src={headerImg} alt="2025 하반기 숏폼 스튜디오 스쿼드 플레이샵" className="header-image" />
         </header>
 
         <div className="timeline">
