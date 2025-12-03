@@ -3,9 +3,11 @@ import type { Activity } from '../types';
 export const activities: Activity[] = [
   {
     id: '1',
-    time: '11:50',
+    time: '11:40',
     title: '집합',
-    description: '롯데호텔월드 1층에서 만나요.',
+    description: '1층에서 만난 후 단체사진 같이 찍어요.',
+    location: '롯데호텔월드 1층',
+    mapUrl: '<div id="daumRoughmapContainer1764742070835" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
     icon: '🎄',
   },
   {
@@ -22,7 +24,7 @@ export const activities: Activity[] = [
     id: '3',
     time: '14:00~17:30',
     title: '팀별 액티비티 진행',
-    subtitle: '택시를 타고 잠실종합운동장으로 이동해주세요 (법인카드 결제 후 정산)',
+    subtitle: '조별로 같이 이동해주세요.',
     description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
     location: '잠실종합운동장',
     mapUrl: '<div id="daumRoughmapContainer1764059872566" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
@@ -39,12 +41,13 @@ export const activities: Activity[] = [
         label: 'B팀',
         activity: '마사지+도자기 트리 클래스',
         description: 'A팀은 환상적인 쿠자 공연을 관람하고, B팀은 힐링 마사지와 도자기 트리 만들기를 체험합니다.',
-        subtitle: '택시를 타고 마사지 장소로 이동해주세요',
+        subtitle: '택시를 타고 마사지 장소로 이동해주세요 (법인카드 결제 후 정산)',
         maps: [
           {
             title: '스파에이르 잠실롯데월드몰점',
             address: '서울 송파구 올림픽로 300 롯데월드몰 6층',
             time: '14:30 - 15:10 (40분)',
+            members: 'Mint, Glenn, Beige, Grace',
             mapUrl: '<div id="daumRoughmapContainer1764060654477" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
             timestamp: '1764060654477',
             key: 'd6vvzm2i62v'
@@ -53,6 +56,7 @@ export const activities: Activity[] = [
             title: '더풋샵마사지 잠실역점',
             address: '서울 송파구 올림픽로 지하 265 잠실역 지하 1층',
             time: '14:30 - 15:30 (60분)',
+            members: 'Kyla, Ed, Crystal, Marina, Rita',
             mapUrl: '<div id="daumRoughmapContainer1764060799169" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
             timestamp: '1764060799169',
             key: 'csccwzjycom'

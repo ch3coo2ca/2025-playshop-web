@@ -154,6 +154,40 @@ export const Modal = ({ activity, selectedTeam, onClose }: ModalProps) => {
     }
   }, [activity.mapUrl, selectedTeam?.maps]);
 
+  // 롯데호텔월드 지도 렌더링
+  useEffect(() => {
+    if (!selectedTeam?.maps && activity.mapUrl && activity.mapUrl.includes('daumRoughmapContainer1764742070835')) {
+      const container = mapContainerRef.current;
+      if (!container) return;
+
+      container.innerHTML = activity.mapUrl;
+
+      let retryCount = 0;
+      const maxRetries = 20;
+
+      const renderMap = () => {
+        retryCount++;
+        
+        if (window.daum && window.daum.roughmap && window.daum.roughmap.Lander) {
+          try {
+            new window.daum.roughmap.Lander({
+              timestamp: '1764742070835',
+              key: 'd93hg9to7rw',
+              mapWidth: '640',
+              mapHeight: '360'
+            }).render();
+          } catch (error) {
+            console.error('카카오맵 렌더링 에러:', error);
+          }
+        } else if (retryCount < maxRetries) {
+          setTimeout(renderMap, 100);
+        }
+      };
+
+      setTimeout(renderMap, 100);
+    }
+  }, [activity.mapUrl, selectedTeam?.maps]);
+
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -208,6 +242,11 @@ export const Modal = ({ activity, selectedTeam, onClose }: ModalProps) => {
                   {mapInfo.address && (
                     <div className="map-address-section">
                       📍 {mapInfo.address}
+                    </div>
+                  )}
+                  {mapInfo.members && (
+                    <div className="map-members-section">
+                      👥 {mapInfo.members}
                     </div>
                   )}
                   <div className="modal-map">

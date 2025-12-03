@@ -3,6 +3,7 @@ export interface MapInfo {
   address?: string;
   time?: string;
   note?: string;
+  members?: string;
   mapUrl: string;
   timestamp: string;
   key: string;

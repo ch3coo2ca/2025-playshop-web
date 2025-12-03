@@ -30,6 +30,9 @@ export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
               <div className="team-card-body">
                 <h3 className="card-title">{team.activity}</h3>
                 <p className="card-description">{team.description}</p>
+                {activity.subtitle && (
+                  <p className="team-card-subtitle">{activity.subtitle}</p>
+                )}
               </div>
               
               {hasDetails && (
