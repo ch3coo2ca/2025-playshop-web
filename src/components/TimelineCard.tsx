@@ -30,8 +30,11 @@ export const TimelineCard = ({ activity, onClick }: TimelineCardProps) => {
               <div className="team-card-body">
                 <h3 className="card-title">{team.activity}</h3>
                 <p className="card-description">{team.description}</p>
-                {activity.subtitle && (
-                  <p className="team-card-subtitle">{activity.subtitle}</p>
+                {team.label === 'A팀' && (
+                  <p className="team-card-subtitle">쿠마 안내를 따라 이동해주세요.</p>
+                )}
+                {team.label === 'B팀' && (
+                  <p className="team-card-subtitle">마리나, 베이지, 카일라를 따라 이동해주세요.</p>
                 )}
               </div>
               

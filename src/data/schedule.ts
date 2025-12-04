@@ -5,7 +5,7 @@ export const activities: Activity[] = [
     id: '1',
     time: '11:40',
     title: '집합',
-    description: '1층에서 만난 후 단체사진 같이 찍어요.',
+    description: '롯데호텔월드 1층에서 만난 후 단체사진 같이 찍어요.',
     location: '롯데호텔월드 1층',
     mapUrl: '<div id="daumRoughmapContainer1764742070835" class="root_daum_roughmap root_daum_roughmap_landing"></div>',
     icon: '🎄',
